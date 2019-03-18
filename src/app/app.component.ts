@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { DataService } from './data.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -9,20 +10,27 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AppComponent {
+  private posts = [];
+  private comments = [];
+  private profile = [];
 
-  constructor(private httpClient: HttpClient){};
+  // need clarity on what this is for
+  private dataObservable: Observable<any[]>;
+
+  // not sure why this goes inside constructor
+  constructor(private dataService: DataService){
   
-  title = 'AngularHttpClient';
-  baseUrl = 'http://localhost:3000';
-  data = []
+    this.dataService.getPosts().subscribe((res: any[])=>{
+      this.posts = res;
+    });
 
-  //http://localhost:3000/
-  getAnything(){
-    this.httpClient
-      .get(this.baseUrl + '/posts')
-      .subscribe((res : any[])=>{
-        this.data = res;
-        console.log('data array is', this.data);
-      })
+    this.dataService.getComments().subscribe((res: any[])=>{
+      this.comments = res;
+    });
+
+    this.dataService.getProfile().subscribe((res: any[])=>{
+      this.profile = res;
+    });
+
   }
 }
