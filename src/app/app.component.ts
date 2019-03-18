@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
+import { TodosService } from './todos.service';
 import { Observable } from 'rxjs';
 
 
@@ -13,12 +14,24 @@ export class AppComponent {
   private posts = [];
   private comments = [];
   private profiles = [];
+  private todos = [];
 
   // need clarity on what this is for
   private dataObservable: Observable<any[]>;
 
   // not sure why this goes inside constructor
-  constructor(private dataService: DataService){}
+  constructor(
+    private dataService: DataService,
+    private TodoService: TodosService
+  ){}
+
+  public getToDos(){
+    this.TodoService.getToDos()
+      .subscribe((res: any[])=>{
+        this.todos = res;
+        console.log(this.todos);
+      })
+  }
 
   public getPosts(){
     this.dataService.getPosts()
