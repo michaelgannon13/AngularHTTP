@@ -21,21 +21,24 @@ export class AppComponent {
   constructor(private dataService: DataService){}
 
   public getPosts(){
-    this.dataService.getPosts().subscribe((res: any[])=>{
-      this.posts = res;
+    this.dataService.getPosts()
+      .subscribe((res: any[])=>{
+        this.posts = res;
     });
   }
 
   public getComments(){
-    this.dataService.getComments().subscribe((res: any[])=>{
-      this.comments = res;
+    this.dataService.getComments()
+      .subscribe((res: any[])=>{
+        this.comments = res;
     });
   }
 
   // this doesn't work since the observable is nested differently to the above observables
   public getProfile(){
-    this.dataService.getProfile().subscribe((res: any[])=>{
-      this.profiles = res;
+    this.dataService.getProfile()
+      .subscribe((res: any[])=>{
+        this.profiles = res;
     });
   }
 }
