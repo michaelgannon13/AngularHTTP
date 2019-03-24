@@ -1,4 +1,4 @@
-<button (click)="getToDos()">GET todos</button>
+<button mat-flat-button color="primary" (click)="getToDos()">Primary</button>
 <ul>
   <li *ngFor="let todo of todos">
     -- status: {{todo.completed}}
@@ -7,3 +7,5 @@
     -- title: {{todo.title}}
   </li>
 </ul>
+
+
