@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TodosComponent } from './todos/todos.component';
-import { AlbumsComponent } from './albums/albums.component';
-import { DataComponent } from './data/data.component';
+import { TodosComponent } from './components/todos/todos.component';
+import { AlbumsComponent } from './components/albums/albums.component';
+import { DataComponent } from './components/data/data.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/todos', pathMatch: 'full' },
