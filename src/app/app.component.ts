@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
+import { AlbumsService } from './albums.service';
 import { TodosService } from './todos.service';
 import { Observable } from 'rxjs';
 
@@ -15,6 +16,7 @@ export class AppComponent {
   private comments = [];
   private profiles = [];
   private todos = [];
+  private albums = [];
 
   // need clarity on what this is for
   private dataObservable: Observable<any[]>;
@@ -22,8 +24,17 @@ export class AppComponent {
   // not sure why this goes inside constructor
   constructor(
     private dataService: DataService,
+    private albumsService: AlbumsService,
     private TodoService: TodosService
   ){}
+
+  public getAlbums () {
+    this.albumsService.getAlbums()
+      .subscribe((res: any[])=>{
+        this.albums = res;
+        console.log('albums are ', this.albums);
+      })
+  }
 
   public getToDos(){
     this.TodoService.getToDos()

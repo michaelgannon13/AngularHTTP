@@ -4,13 +4,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class TodosService {
+export class AlbumsService {
 
   constructor(private httpClient: HttpClient) { }
 
   baseUrl = 'https://jsonplaceholder.typicode.com';
 
-  getToDos () {
-    return this.httpClient.get(this.baseUrl + '/todos/');
+  getAlbums () {
+    return this.httpClient.get(this.baseUrl + '/albums');
   }
 }
