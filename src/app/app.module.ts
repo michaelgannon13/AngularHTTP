@@ -4,10 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodosComponent } from './todos/todos.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosComponent,
+    AlbumsComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
