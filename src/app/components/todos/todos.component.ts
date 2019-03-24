@@ -13,6 +13,7 @@ export class TodosComponent implements OnInit {
   private todos = [];
 
   ngOnInit() {
+   this.getToDos();
   }
 
   public getToDos(){
