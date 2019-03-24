@@ -8,16 +8,24 @@ import { AlbumsService } from '../../services/albums/albums.service';
 })
 export class AlbumsComponent implements OnInit {
   private albums = [];
+  test = 'test';
 
   constructor(private albumsService: AlbumsService) { }
 
   ngOnInit() {
   }
 
-  public getAlbums () {
+  public getAlbums() {
     this.albumsService.getAlbums()
       .subscribe((res: any[]) => {
         this.albums = res;
       });
+  }
+
+  public setAlbums() {
+    return this.albumsService.setAlbums().subscribe((res: any[]) => {
+      this.albums = res;
+      console.log(this.albums);
+    } );
   }
 }
