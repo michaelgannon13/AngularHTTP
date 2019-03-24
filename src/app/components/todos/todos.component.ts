@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TodosService } from '../../services/todos/todos.service';
 
 
@@ -12,6 +13,7 @@ export class TodosComponent implements OnInit {
   private todos = [];
 
   ngOnInit() {
+   this.getToDos();
   }
 
   public getToDos(){

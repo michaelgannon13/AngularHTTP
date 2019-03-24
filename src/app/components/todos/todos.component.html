@@ -1,9 +1,11 @@
-<button (click)="getToDos()">GET todos</button>
-<ul>
-  <li *ngFor="let todo of todos">
-    -- status: {{todo.completed}}
-    -- id: {{todo.id}}
-    -- userId: {{todo.userId}}
-    -- title: {{todo.title}}
-  </li>
-</ul>
+<button mat-flat-button color="primary" (click)="getToDos()">Load my todo list</button>
+
+<mat-list role="list">
+    <mat-list-item  *ngFor="let todo of todos" role="listitem">
+        id: {{todo.id}}
+        title: {{todo.title}}<br>
+        status: {{todo.completed}}<br>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+</mat-list>
+
