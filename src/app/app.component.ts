@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService } from './data.service';
-import { AlbumsService } from './albums.service';
-import { TodosService } from './todos.service';
+import { DataService } from './services/data/data.service';
+import { AlbumsService } from './services/albums/albums.service';
+import { TodosService } from './services/todos/todos.service';
 import { Observable } from 'rxjs';
 
 
@@ -32,7 +32,6 @@ export class AppComponent {
     this.albumsService.getAlbums()
       .subscribe((res: any[])=>{
         this.albums = res;
-        console.log('albums are ', this.albums);
       })
   }
 
