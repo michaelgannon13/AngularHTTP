@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumsService } from '../../services/albums/albums.service';
-import { PostmanService } from '../../postman.service';
+import { PostmanService } from '../../services/post/postman.service';
 
 @Component({
   selector: 'app-albums',
@@ -24,8 +24,8 @@ export class AlbumsComponent implements OnInit {
       });
   }
 
-  public postAlbum (data) {
+  public postAlbum (albums) {
     this.getAlbums();
-    this.postService.postSomething(data);
+    this.postService.postSomething(albums);
   }
 }
