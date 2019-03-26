@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DataService } from './data.service';
-import { TodosService } from './todos.service';
+import { DataService } from '../app/services/data/data.service';
+import { TodosService } from '../app/services/todos/todos.service';
 import { PostmanService } from './postman.service';
 import { Observable } from 'rxjs';
 
