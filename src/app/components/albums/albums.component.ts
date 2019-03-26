@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumsService } from '../../services/albums/albums.service';
+import { PostmanService } from '../../services/post/postman.service';
 
 @Component({
   selector: 'app-albums',
@@ -9,7 +10,9 @@ import { AlbumsService } from '../../services/albums/albums.service';
 export class AlbumsComponent implements OnInit {
   private albums = [];
 
-  constructor(private albumsService: AlbumsService) { }
+  constructor(
+    private albumsService: AlbumsService,
+    private postService: PostmanService) { }
 
   ngOnInit() {
   }
@@ -19,5 +22,10 @@ export class AlbumsComponent implements OnInit {
       .subscribe((res: any[]) => {
         this.albums = res;
       });
+  }
+
+  public postAlbum (albums) {
+    this.getAlbums();
+    this.postService.postSomething(albums);
   }
 }

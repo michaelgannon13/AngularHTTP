@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -9,5 +8,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AppComponent {
+
   constructor(){}
+
 }
