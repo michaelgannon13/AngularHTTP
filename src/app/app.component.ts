@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
 import { TodosService } from './todos.service';
+import { PostmanService } from './postman.service';
 import { Observable } from 'rxjs';
 
 
@@ -22,6 +23,7 @@ export class AppComponent {
   // not sure why this goes inside constructor
   constructor(
     private dataService: DataService,
+    private postService: PostmanService,
     private TodoService: TodosService
   ){}
 
