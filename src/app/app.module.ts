@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { DataComponent } from './components/data/data.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DataComponent } from './components/data/data.component';
     AppComponent,
     TodosComponent,
     AlbumsComponent,
-    DataComponent
+    DataComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
