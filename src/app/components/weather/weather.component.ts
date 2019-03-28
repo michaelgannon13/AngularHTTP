@@ -10,7 +10,7 @@ export class WeatherComponent implements OnInit {
 
   constructor(private weatherService: WeatherService) { }
 
-  weather = [];
+  weather;
 
   ngOnInit() {
   }
@@ -19,7 +19,10 @@ export class WeatherComponent implements OnInit {
     this.weatherService.getWeather()
       .subscribe((res: any[]) => {
         this.weather = res;
-        alert(this.weather);
+        console.log('London Longitude is ' + this.weather.coord.lon);
+        console.log('London Latitude is ' + this.weather.coord.lat);
+        console.log('London Temperature is ' + this.weather.main.temp);
+        console.log(this.weather.name + ' humidity is ' + this.weather.main.humidity);
       })
   }
 
