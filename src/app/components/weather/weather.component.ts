@@ -19,16 +19,10 @@ export class WeatherComponent implements OnInit {
     this.weatherService.getWeather()
       .subscribe((res: any[]) => {
         this.weather = res;
-        console.log('weather array contains ' + this.weather);
+        alert(this.weather);
       })
   }
 
 }
 
-// public getAlbums () {
-//   this.albumsService.getAlbums()
-//     .subscribe((res: any[]) => {
-//       this.albums = res;
-//     });
-// }
 
