@@ -21,6 +21,7 @@ export class WeatherComponent implements OnInit {
   isWeather = false;
 
   ngOnInit() {
+    this.getWeather();
   }
 
   

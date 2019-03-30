@@ -1,4 +1,11 @@
-<button mat-flat-button color="primary" (click)="getWeather()">Check my weather</button>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item>Settings</button>
+  <button mat-menu-item>Help</button>
+</mat-menu>
+
+<button mat-flat-button color="primary" [matMenuTriggerFor]="appMenu">
+  Menu
+</button>
 
 <div *ngIf="isWeather">
   <h2>You are in <span style="color: green">{{currentWeather.name}}</span></h2>
