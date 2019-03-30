@@ -6,7 +6,7 @@ import { DataComponent } from './components/data/data.component';
 import { WeatherComponent } from './components/weather/weather.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/todos', pathMatch: 'full' },
+  { path: '', redirectTo: '/weather', pathMatch: 'full' },
   { path: 'todos', component: TodosComponent },
   { path: 'albums', component: AlbumsComponent },
   { path: 'data', component: DataComponent },

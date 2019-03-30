@@ -11,19 +11,22 @@ export class WeatherComponent implements OnInit {
   constructor(private weatherService: WeatherService) { }
 
   weather;
+  temperature;
+  humidity;
+  location;
 
   ngOnInit() {
+    this.getWeather();
   }
 
   getWeather(){
     this.weatherService.getWeather()
       .subscribe((res: any[]) => {
         this.weather = res;
-        console.log('London Longitude is ' + this.weather.coord.lon);
-        console.log('London Latitude is ' + this.weather.coord.lat);
-        console.log('London Temperature is ' + this.weather.main.temp);
-        console.log(this.weather.name + ' humidity is ' + this.weather.main.humidity);
-      })
+        this.temperature = this.weather.main.temp;
+        this.humidity = this.weather.main.humidity;
+        this.location = this.weather.name;
+      });
   }
 
 }
