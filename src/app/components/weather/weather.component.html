@@ -1,5 +1,6 @@
-<button mat-flat-button color="primary" (click)="getWeather()">Get Weather</button>
+<button mat-flat-button color="primary" (click)="getWeather()">Check my weather</button>
 
-<h2>The temperature in {{location}} right
-    now is {{temperature}} and the humidity
-  is {{humidity}} </h2>
+<div *ngIf="isWeather">
+  <h2>You are in <span style="color: green">{{currentWeather.name}}</span></h2>
+  <h2>The weather today is <span style="color: green">{{currentWeather.weather[0].description}}</span></h2>
+</div>
