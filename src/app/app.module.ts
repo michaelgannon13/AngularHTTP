@@ -1,6 +1,6 @@
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material';
-import { MatMenuModule } from '@angular/material/menu';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,9 +28,7 @@ import { WeatherComponent } from './components/weather/weather.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatMenuModule,
     MatListModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

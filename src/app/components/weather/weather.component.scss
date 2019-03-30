@@ -1,0 +1,14 @@
+.weather {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    &__container {
+        color: #fff;
+    }
+}
