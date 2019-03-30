@@ -1,6 +1,8 @@
-<button mat-flat-button color="primary" (click)="getWeather()">Check my weather</button>
-
-<div *ngIf="isWeather">
-  <h2>You are in <span style="color: green">{{currentWeather.name}}</span></h2>
-  <h2>The weather today is <span style="color: green">{{currentWeather.weather[0].description}}</span></h2>
+<div class="weather"
+  [ngStyle]="{'background-image': 'url(../../assets/img/' + backgroundImage +')'}"
+>
+  <div class="weather__container" *ngIf="isWeather">
+    <h2>You are in <span>{{currentWeather.name}}</span></h2>
+    <h2>The weather today is <span>{{currentWeather.weather[0].description}}</span></h2>
+  </div>
 </div>
