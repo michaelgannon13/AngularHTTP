@@ -32,14 +32,29 @@ export class WeatherComponent implements OnInit {
           this.currentWeather = res;
           this.isWeather = true;
           let weather = this.currentWeather.weather[0].main;
-          switch (weather) {
+            switch (weather) {
               case 'Drizzle':
                 this.backgroundImage = 'rain.jpg';
-                break;
+              break;
+              case 'Rain':
+                this.backgroundImage = 'rain.jpg';
+              break;
               case 'Clouds':
                 this.backgroundImage = 'clouds.jpg';
               break;
-          }
+              case 'Mist':
+                this.backgroundImage = 'mist.jpg';
+              break;
+              case 'Clear':
+                this.backgroundImage = 'clear.jpg';
+              break;
+              case 'Snow':
+                this.backgroundImage = 'snow.jpg';
+              break;
+              case 'Thunderstorm':
+                this.backgroundImage = 'thunderstorm.jpg';
+              break;
+            }
           })
       });
     } else {
