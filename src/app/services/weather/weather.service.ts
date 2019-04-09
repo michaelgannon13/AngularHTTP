@@ -14,14 +14,14 @@ export class WeatherService {
   long;
 
   getWeather(){
-    return this.http.get(this.baseUrl + 
-      '/data/2.5/weather?q=London&APPID=' + 
+    return this.http.get(this.baseUrl +
+      '/data/2.5/weather?q=London&APPID=' +
       this.APIKey);
   }
 
   getLocation(lat, long){
     return this.http.get(this.baseUrl +
-    '/data/2.5/weather?lat=' + lat + '&lon=' + long + 
+    '/data/2.5/weather?lat=' + lat + '&lon=' + long +
     '&APPID=' + this.APIKey);
   }
 }
