@@ -17,19 +17,31 @@ export class WeatherComponent implements OnInit {
   isWeather = false;
   backgroundImage;
   painting;
+  paintingID;
 
   ngOnInit() {
     this.getWeather();
-    this.getPainting();
+    this.searchPainting();
   }
 
 
-  getPainting() {
-    this.paintService.getPainting()
+  searchPainting() {
+    this.paintService.searchPainting()
       .subscribe((res: any[]) => {
         this.painting = res;
-        console.log(this.painting);
+        // first object index
+        // console.log(this.painting.objectIDs[0]);
+        this.getPainting(this.painting.objectIDs[0]);
       });
+  }
+
+  getPainting(id){
+    this.paintService.getPainting(id)
+      .subscribe((res: any) => {
+        this.paintingID = res;
+        console.log(this.paintingID.primaryImage);
+        this.backgroundImage = this.paintingID.primaryImage;
+      })
   }
 
   getWeather(): void {
@@ -44,29 +56,6 @@ export class WeatherComponent implements OnInit {
             this.currentWeather = res;
             this.isWeather = true;
             let weather = this.currentWeather.weather[0].main;
-            switch (weather) {
-              case 'Drizzle':
-                this.backgroundImage = 'rain.jpg';
-                break;
-              case 'Rain':
-                this.backgroundImage = 'rain.jpg';
-                break;
-              case 'Clouds':
-                this.backgroundImage = 'clouds.jpg';
-                break;
-              case 'Mist':
-                this.backgroundImage = 'mist.jpg';
-                break;
-              case 'Clear':
-                this.backgroundImage = 'clear.jpg';
-                break;
-              case 'Snow':
-                this.backgroundImage = 'snow.jpg';
-                break;
-              case 'Thunderstorm':
-                this.backgroundImage = 'thunderstorm.jpg';
-                break;
-            }
           })
       });
     } else {
