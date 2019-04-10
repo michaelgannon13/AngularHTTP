@@ -20,12 +20,35 @@ export class WeatherComponent implements OnInit {
   paintingID;
 
   ngOnInit() {
-    this.getWeather();
+    this.getLocation();
   }
 
+  getLocation(): void {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+        const longitude = position.coords.longitude;
+        const latitude = position.coords.latitude;
+        this.lat = latitude;
+        this.long = longitude;
+        this.getWeather(this.lat, this.long);
+      });
+    } else {
+      console.log("No support for geolocation")
+    }
+  }
 
-  searchPainting(search) {
-    this.paintService.searchPainting(search)
+  getWeather(lat, long){
+    this.weatherService.getLocation(lat, long)
+      .subscribe((res: any[]) => {
+        this.currentWeather = res;
+        this.isWeather = true;
+        let weather = this.currentWeather.weather[0].main;
+        this.searchPainting(weather);
+      });
+  }
+
+  searchPainting(weather) {
+    this.paintService.searchPainting(weather)
       .subscribe((res: any[]) => {
         this.painting = res;
         this.getPainting(this.painting.objectIDs[0]);
@@ -36,31 +59,8 @@ export class WeatherComponent implements OnInit {
     this.paintService.getPainting(id)
       .subscribe((res: any) => {
         this.paintingID = res;
-        console.log(this.paintingID.primaryImage);
         this.backgroundImage = this.paintingID.primaryImage;
       })
-  }
-
-  getWeather(): void {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const longitude = position.coords.longitude;
-        const latitude = position.coords.latitude;
-        this.lat = latitude;
-        this.long = longitude;
-        this.weatherService.getLocation(this.lat, this.long)
-          .subscribe((res: any[]) => {
-            this.currentWeather = res;
-            this.isWeather = true;
-            let weather = this.currentWeather.weather[0].main;
-            this.searchPainting(weather);
-
-
-          })
-      });
-    } else {
-      console.log("No support for geolocation")
-    }
   }
 }
 

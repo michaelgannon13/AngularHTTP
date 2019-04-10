@@ -15,7 +15,6 @@ export class PaintService {
       '/public/collection/v1/search?q=' + search);
   }
 
-
   getPainting(obj) {
     return this.http.get(this.baseUrl +
       '/public/collection/v1/objects/' +
