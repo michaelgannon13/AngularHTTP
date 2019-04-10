@@ -21,16 +21,13 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit() {
     this.getWeather();
-    this.searchPainting();
   }
 
 
-  searchPainting() {
-    this.paintService.searchPainting()
+  searchPainting(search) {
+    this.paintService.searchPainting(search)
       .subscribe((res: any[]) => {
         this.painting = res;
-        // first object index
-        // console.log(this.painting.objectIDs[0]);
         this.getPainting(this.painting.objectIDs[0]);
       });
   }
@@ -56,6 +53,9 @@ export class WeatherComponent implements OnInit {
             this.currentWeather = res;
             this.isWeather = true;
             let weather = this.currentWeather.weather[0].main;
+            this.searchPainting(weather);
+
+
           })
       });
     } else {

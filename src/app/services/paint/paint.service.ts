@@ -10,9 +10,9 @@ export class PaintService {
 
   baseUrl = 'https://collectionapi.metmuseum.org';
 
-  searchPainting() {
+  searchPainting(search) {
     return this.http.get(this.baseUrl +
-      '/public/collection/v1/search?q=rain');
+      '/public/collection/v1/search?q=' + search);
   }
 
 
