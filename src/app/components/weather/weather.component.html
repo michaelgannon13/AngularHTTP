@@ -1,7 +1,8 @@
 <div class="weather"
      *ngIf="isWeather; else noWeather"
-     [ngStyle]="{'background-image': 'url(../../assets/img/' + backgroundImage +')'}"
+     [ngStyle]="{'background-image': 'url('+ backgroundImage +')'}"
 >
+
   <div class="weather__container" *ngIf="isWeather">
     <h2>You are in <span>{{currentWeather.name}}</span></h2>
     <h2>The weather today is <span>{{currentWeather.weather[0].description}}</span></h2>
