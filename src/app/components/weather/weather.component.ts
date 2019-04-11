@@ -19,6 +19,8 @@ export class WeatherComponent implements OnInit {
   painting;
   paintingID;
   tags;
+  paintingTitle;
+  paintingArtist;
 
   ngOnInit() {
     this.getLocation();
@@ -62,6 +64,8 @@ export class WeatherComponent implements OnInit {
         this.paintingID = res;
         this.backgroundImage = this.paintingID.primaryImage;
         this.tags = this.paintingID.tags;
+        this.paintingTitle = this.paintingID.title;
+        this.paintingArtist = this.paintingID.artistDisplayName;
       });
   }
 }

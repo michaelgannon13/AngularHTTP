@@ -6,8 +6,10 @@
   <div class="weather__container" *ngIf="isWeather">
     <h2>You are in <span>{{currentWeather.name}}</span></h2>
     <h2>The weather today is <span>{{currentWeather.weather[0].description}}</span></h2>
-    <h6>Tags:  <span>{{tags}}</span></h6>
   </div>
 </div>
+<h6>Painting tags: <span>{{tags}}</span></h6>
+<h6>Painting title: <span>{{paintingTitle}}</span></h6>
+<h6>Painting artist: <span>{{paintingArtist}}</span></h6>
 
 <ng-template #noWeather>No weather</ng-template>
