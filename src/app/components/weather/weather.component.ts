@@ -54,7 +54,9 @@ export class WeatherComponent implements OnInit {
     this.paintService.searchPainting(weather)
       .subscribe((res: any[]) => {
         this.painting = res;
-        this.getPainting(this.painting.objectIDs[0]);
+        const arrayLength = Object.keys(this.painting.objectIDs).length;
+        const  randomNumber = Math.floor(Math.random() * arrayLength);
+        this.getPainting(this.painting.objectIDs[randomNumber]);
       });
   }
 
