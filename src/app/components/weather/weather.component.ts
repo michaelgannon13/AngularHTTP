@@ -34,16 +34,16 @@ export class WeatherComponent implements OnInit {
         this.getWeather(this.lat, this.long);
       });
     } else {
-      console.log("No support for geolocation")
+      console.log('No support for geolocation');
     }
   }
 
-  getWeather(lat, long){
+  getWeather(lat, long) {
     this.weatherService.getLocation(lat, long)
       .subscribe((res: any[]) => {
         this.currentWeather = res;
         this.isWeather = true;
-        let weather = this.currentWeather.weather[0].main;
+        const weather = this.currentWeather.weather[0].description;
         this.searchPainting(weather);
       });
   }
@@ -56,13 +56,13 @@ export class WeatherComponent implements OnInit {
       });
   }
 
-  getPainting(id){
+  getPainting(id) {
     this.paintService.getPainting(id)
       .subscribe((res: any) => {
         this.paintingID = res;
         this.backgroundImage = this.paintingID.primaryImage;
         this.tags = this.paintingID.tags;
-      })
+      });
   }
 }
 
