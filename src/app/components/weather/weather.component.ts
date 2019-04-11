@@ -18,6 +18,7 @@ export class WeatherComponent implements OnInit {
   backgroundImage;
   painting;
   paintingID;
+  tags;
 
   ngOnInit() {
     this.getWeather();
@@ -36,8 +37,8 @@ export class WeatherComponent implements OnInit {
     this.paintService.getPainting(id)
       .subscribe((res: any) => {
         this.paintingID = res;
-        console.log(this.paintingID.primaryImage);
         this.backgroundImage = this.paintingID.primaryImage;
+        this.tags = this.paintingID.tags;
       })
   }
 
