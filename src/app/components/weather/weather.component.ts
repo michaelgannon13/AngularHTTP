@@ -45,7 +45,7 @@ export class WeatherComponent implements OnInit {
       .subscribe((res: any[]) => {
         this.currentWeather = res;
         this.isWeather = true;
-        const weather = this.currentWeather.weather[0].description;
+        const weather = this.currentWeather.weather[0].main;
         this.searchPainting(weather);
       });
   }
