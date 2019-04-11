@@ -13,12 +13,6 @@ export class WeatherService {
   lat;
   long;
 
-  getWeather(){
-    return this.http.get(this.baseUrl +
-      '/data/2.5/weather?q=London&APPID=' +
-      this.APIKey);
-  }
-
   getLocation(lat, long){
     return this.http.get(this.baseUrl +
     '/data/2.5/weather?lat=' + lat + '&lon=' + long +
