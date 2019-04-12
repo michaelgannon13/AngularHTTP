@@ -64,6 +64,7 @@ export class WeatherComponent implements OnInit {
     this.paintService.getPainting(id)
       .subscribe((res: any) => {
         this.paintingID = res;
+        console.log(this.paintingID);
         this.backgroundImage = this.paintingID.primaryImage;
         this.tags = this.paintingID.tags;
         this.paintingTitle = this.paintingID.title;

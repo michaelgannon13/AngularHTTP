@@ -1,14 +1,33 @@
-.weather {
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    vertical-align: middle;
-    display: table-cell;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    
-    &__container {
-        color: #fff;
+.container {
+  width: 100vw;
+  height: 100vh;;
+
+  &__left, &__right {
+    width: 50vw;
+    display: inline-block;
+  }
+
+  &__right {
+    float: right;
+    .painting {
+      &__image {
+        height: 75vh;
+        text-align: center;
+        vertical-align: middle;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      &__stats {
+        height: 25vh;
+      }
     }
+
+  }
+
+  &__left {
+    font-family: 'Varela Round', sans-serif;
+    color: #ccc;
+  }
 }
+

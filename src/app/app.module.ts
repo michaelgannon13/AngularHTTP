@@ -1,5 +1,7 @@
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material';
+import { MatSortModule } from '@angular/material/sort';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +30,9 @@ import { WeatherComponent } from './components/weather/weather.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatSortModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
