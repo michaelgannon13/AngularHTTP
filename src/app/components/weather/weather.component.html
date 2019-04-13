@@ -10,16 +10,10 @@
     <div class="painting__stats">
       <table matSort>
           <tr>
-            <th mat-sort-header="Tags">Tags</th>
             <th mat-sort-header="Title">Title</th>
             <th mat-sort-header="Artists">Artists</th>
           </tr>
           <tr>
-            <td>
-              <mat-chip-list *ngFor="let tag of tags">
-                <mat-chip>{{tag}}</mat-chip>
-              </mat-chip-list>
-            </td>
             <td>{{paintingTitle}}</td>
             <td>{{paintingArtist}}</td>
           </tr>
@@ -33,6 +27,11 @@
           *ngIf="isWeather; else noWeather"
           [ngStyle]="{'background-image': 'url('+ backgroundImage +')'}"
         >
+        </div>
+        <div class="painting__tags">
+          <mat-chip-list class="tag" *ngFor="let tag of tags">
+            <mat-chip>{{tag}}</mat-chip>
+          </mat-chip-list>
         </div>
       </div>
   </div>

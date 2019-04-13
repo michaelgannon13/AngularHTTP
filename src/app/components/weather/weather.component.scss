@@ -21,6 +21,13 @@
       &__stats {
         height: 25vh;
       }
+      &__tags {
+        text-align: center;
+        .tag {
+          display: inline-block !important;
+          padding: 0 5px;
+        }
+      }
     }
 
   }
