@@ -21,6 +21,7 @@ export class WeatherComponent implements OnInit {
   tags;
   paintingTitle;
   paintingArtist;
+  details = false;
 
   ngOnInit() {
     this.getLocation();
@@ -70,6 +71,10 @@ export class WeatherComponent implements OnInit {
         this.paintingTitle = this.paintingID.title;
         this.paintingArtist = this.paintingID.artistDisplayName;
       });
+  }
+
+  toggleDetails () {
+    this.details = !this.details;
   }
 }
 
