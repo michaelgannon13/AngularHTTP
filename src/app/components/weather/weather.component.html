@@ -7,6 +7,25 @@
       </h2>
       </div>
     <ng-template #noWeather>No weather</ng-template>
+    <div class="painting__stats">
+      <table matSort>
+          <tr>
+            <th mat-sort-header="Tags">Tags</th>
+            <th mat-sort-header="Title">Title</th>
+            <th mat-sort-header="Artists">Artists</th>
+          </tr>
+          <tr>
+            <td>
+              <mat-chip-list *ngFor="let tag of tags">
+                <mat-chip>{{tag}}</mat-chip>
+              </mat-chip-list>
+            </td>
+            <td>{{paintingTitle}}</td>
+            <td>{{paintingArtist}}</td>
+          </tr>
+        </table>
+        <button mat-flat-button color="primary">Show more</button>
+    </div>
   </div>
   <div class="container__right">
       <div class="painting">
@@ -14,25 +33,6 @@
           *ngIf="isWeather; else noWeather"
           [ngStyle]="{'background-image': 'url('+ backgroundImage +')'}"
         >
-        </div>
-        <div class="painting__stats">
-          <table matSort>
-              <tr>
-                <th mat-sort-header="Tags">Tags</th>
-                <th mat-sort-header="Title">Title</th>
-                <th mat-sort-header="Artists">Artists</th>
-              </tr>
-              <tr>
-                <td>
-                  <mat-chip-list *ngFor="let tag of tags">
-                    <mat-chip>{{tag}}</mat-chip>
-                  </mat-chip-list>
-                </td>
-                <td>{{paintingTitle}}</td>
-                <td>{{paintingArtist}}</td>
-              </tr>
-            </table>
-            <button mat-flat-button color="primary">Show more</button>
         </div>
       </div>
   </div>
