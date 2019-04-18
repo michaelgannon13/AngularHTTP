@@ -18,11 +18,9 @@
         background-size: contain;
         background-repeat: no-repeat;
       }
-      &__stats {
-        height: 25vh;
-      }
       &__tags {
         text-align: center;
+        margin-top: 10px;
         .tag {
           display: inline-block !important;
           padding: 0 5px;
@@ -34,7 +32,19 @@
 
   &__left {
     font-family: 'Varela Round', sans-serif;
-    color: #ccc;
+    height: 100vh;
+    text-align: right;
+    margin-top: 30vh;
+
+    .painting__stats {
+      margin-right: 1rem;
+    }
+    .weather {
+      &__banner {
+        color: #ccc;
+        margin-right: 1rem;
+      }
+    }
   }
 }
 

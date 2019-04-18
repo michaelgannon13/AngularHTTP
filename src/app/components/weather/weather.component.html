@@ -5,20 +5,11 @@
         You're in {{currentWeather.name}}
         and the weather is {{currentWeather.weather[0].description}}
       </h2>
-      </div>
+    </div>
     <ng-template #noWeather>No weather</ng-template>
     <div class="painting__stats">
-      <table matSort>
-          <tr>
-            <th mat-sort-header="Title">Title</th>
-            <th mat-sort-header="Artists">Artists</th>
-          </tr>
-          <tr>
-            <td>{{paintingTitle}}</td>
-            <td>{{paintingArtist}}</td>
-          </tr>
-        </table>
-        <button mat-flat-button color="primary" (click)="toggleDetails()">Show more</button>
+      <div>{{paintingTitle}}</div>
+      <div>{{paintingArtist}}</div>
     </div>
   </div>
   <div class="container__right">
