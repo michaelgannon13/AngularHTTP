@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +9,10 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = 'https://api.openweathermap.org';
-  APIKey = '3d9a7a54e4d985054d7bad6b539f6391';
-  lat;
-  long;
+  lat: Coordinates;
+  long: Coordinates;
 
-  getLocation(lat, long){
-    return this.http.get(this.baseUrl +
-    '/data/2.5/weather?lat=' + lat + '&lon=' + long +
-    '&APPID=' + this.APIKey);
+  getLocation(lat: Coordinates, long: Coordinates) {
+    return this.http.get(`${environment.weatherAPIBaseUrl}/data/2.5/weather?lat=${lat}&lon=${long}&APPID=${environment.weatherAPIKey}`);
   }
 }
